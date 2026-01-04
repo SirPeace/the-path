@@ -1,0 +1,12 @@
+services:
+  api_http:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - ${API_HTTP_PORT:-8080}:8080
+    networks:
+      - api
+
+networks:
+  api:
